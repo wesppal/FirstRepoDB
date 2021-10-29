@@ -14,6 +14,10 @@ public class UserWrapper {
             switch (prop) {
                 case "id:":
                     long id = Long.parseLong(str.substring(4));
+                    if (id > User.getCounterId()) {
+                        User.setCounterId(User.getCounterId() + 1);
+                    }
+                    user.setId(id);
                     break;
                 case "name:":
                     String name = str.substring(6);
