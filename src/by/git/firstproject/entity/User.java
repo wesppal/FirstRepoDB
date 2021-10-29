@@ -8,6 +8,8 @@ public class User {
     private int age;
     private String phoneNumber;
 
+    private static long counterId = 0;
+
 
     public long getId() {
         return id;
@@ -49,9 +51,17 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
+    public static void setCounterId(long counterId) {
+        User.counterId = counterId;
+    }
+
+    public static long getCounterId(){
+        return counterId;
+    }
+
     @Override
     public String toString() {
-        return  "id: " + id +
+        return "id: " + id +
                 ", name: " + name +
                 ", surname: " + surname +
                 ", age: " + age +
